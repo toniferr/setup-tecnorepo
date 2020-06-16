@@ -10,7 +10,7 @@ public interface CategoriaService {
 
 	void updateCategoria(Categoria categoria);
 
-	void insertCategoria(Categoria categoriaBean);
+	void insertCategoria(Categoria categoria);
 
 	void deleteCategoria(Integer id);
 

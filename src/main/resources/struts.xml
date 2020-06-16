@@ -23,14 +23,15 @@
 
         <default-action-ref name="index"/>
 
-        <action name="index" class="es.toni.struts.crud.action.PersonAction" method="list">
+        <!-- <action name="index" class="es.toni.struts.crud.action.PersonAction" method="list">
             <result name="success">/WEB-INF/views/persons.jsp</result>
             <interceptor-ref name="basicStack"/>
-        </action>
+        </action> 
         <action name="*Person" class="es.toni.struts.crud.action.PersonAction" method="{1}">
             <result name="input">/WEB-INF/views/editPerson.jsp</result>
             <result name="success" type="redirectAction">index</result>
         </action>
+        -->
         <action name="list" method="list"
             class="es.toni.struts.crud.action.UserAction">
             <result type="freemarker" name="success">/WEB-INF/views/inicio.ftl</result>
@@ -40,9 +41,13 @@
             <result type="freemarker" name="success">/WEB-INF/views/inicio.ftl</result>
         </action>
         
-       <action name="categoria" class="es.toni.struts.crud.action.CategoriaAction" method="list">
+        <action name="index" class="es.toni.struts.crud.action.CategoriaAction" method="list">
             <result name="success">/WEB-INF/views/listas.jsp</result>
             <interceptor-ref name="basicStack"/>
+        </action>
+       <action name="*Categoria" class="es.toni.struts.crud.action.CategoriaAction" method="{1}">
+            <result name="input">/WEB-INF/views/miembro.jsp</result>
+            <result name="success" type="redirectAction">index</result>
         </action>
     </package>
     

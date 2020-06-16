@@ -1,11 +1,14 @@
 package es.toni.struts.crud.model;
 
-public class Categoria {
+public class Categoria implements Cloneable{
 
 	private Integer id;
 	
     private String nombre;
     
+	public Categoria() {
+		super();
+	}
 
 	public Categoria(Integer id, String nombre) {
 		super();

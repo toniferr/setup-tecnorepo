@@ -5,9 +5,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>JSP: Struts 2</title>
+<title>Struts 2</title>
 </head>
 <body>
-<p><a href='<s:url action="index" />' >List People</a></p>
+<p><a href='<s:url action="index" />' >Accede al listado de categorias</a></p>
 </body>
 </html>

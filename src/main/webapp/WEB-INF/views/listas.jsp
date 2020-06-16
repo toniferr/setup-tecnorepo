@@ -15,7 +15,7 @@
         <br/><br/>
         <table class="borderAll">
             <tr>
-                <th><s:text name="categoria.nombre"/></th>
+                <th><s:text name="label.tabla.nombre"/></th>
                 <th>&nbsp;</th>
             </tr>
             <s:iterator value="categorias" status="status">
@@ -24,12 +24,12 @@
                     
                     <td class="nowrap">
                         <s:url action="inputCategoria" var="url">
-                            <s:param name="categoria.categoriaId" value="categoriaId"/>
+                            <s:param name="categoria.id" value="id"/>
                         </s:url>
                         <a href="<s:property value="#url"/>">Edit</a>
                         &nbsp;&nbsp;&nbsp;
                         <s:url action="deleteCategoria" var="url">
-                            <s:param name="categoria.categoriaId" value="categoriaId"/>
+                            <s:param name="categoria.id" value="id"/>
                         </s:url>
                         <a href="<s:property value="#url"/>">Delete</a>
                     </td>

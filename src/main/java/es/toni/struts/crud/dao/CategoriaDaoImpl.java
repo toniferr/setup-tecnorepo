@@ -9,9 +9,9 @@ import org.apache.logging.log4j.Logger;
 import es.toni.struts.crud.model.Categoria;
 
 public class CategoriaDaoImpl implements CategoriaDao {
+	
     private static final Logger LOG = LogManager.getLogger(CategoriaDaoImpl.class.getName());
-
-    private final static List<Categoria> categorias;
+    private static final List<Categoria> categorias;
 
     static {
         categorias = new ArrayList<>();

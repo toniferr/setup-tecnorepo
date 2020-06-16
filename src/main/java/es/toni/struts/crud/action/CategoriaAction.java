@@ -27,7 +27,7 @@ public class CategoriaAction extends ActionSupport implements Preparable{
         
         if (categoria != null && categoria.getId() != null) {
             categoria = categoriaService.getCategoria(categoria.getId());
-            LOG.info("Preparing actual data for Person: " + categoria);
+            LOG.info("Preparing actual data for Categoria: " + categoria);
         }
 	}
 	
@@ -37,6 +37,30 @@ public class CategoriaAction extends ActionSupport implements Preparable{
     public String list() {
         categorias = categoriaService.getAllCategoria();
         LOG.info("Listing categorias");
+        return SUCCESS;
+    }
+    
+    /**
+     * Save the state of the Categoria object instance field.
+     */
+    public String save() {
+        if (categoria.getId() == null) {
+            categoriaService.insertCategoria(categoria);
+            LOG.info("Created new Categoria: " + categoria);
+        } else {
+            categoriaService.updateCategoria(categoria);
+            LOG.info("Updated Categoria: " + categoria);
+        }
+        return SUCCESS;
+    }
+
+    /**
+     * Delete from Categoria identified by the categoria
+     * instance field's id value.
+     */
+    public String delete() {
+        categoriaService.deleteCategoria(categoria.getId());
+        LOG.info("Deleted Categoria: " + categoria);
         return SUCCESS;
     }
 
