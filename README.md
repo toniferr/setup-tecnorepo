@@ -6,7 +6,7 @@
 
 Dependencias:
 
-struts2-core - version 2.5.22
-log4j-api - version 2.13.3
-log4j-core - version 2.13.3
-freemarker - version 2.3.30
+- struts2-core - version 2.5.22
+- log4j-api - version 2.13.3
+- log4j-core - version 2.13.3
+- freemarker - version 2.3.30
