@@ -6,7 +6,7 @@
 	<groupId>org.apache.struts</groupId>
     <artifactId>setup-tecnorepo</artifactId>
     <packaging>war</packaging>
-    <name>CRUD Example</name>
+    <name>setup-tecnorepo</name>
     <version>1.0.0</version>
 
     <description>
