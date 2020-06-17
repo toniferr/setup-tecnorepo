@@ -7,7 +7,6 @@ public class Categoria implements Cloneable{
     private String nombre;
     
 	public Categoria() {
-		super();
 	}
 
 	public Categoria(Integer id, String nombre) {

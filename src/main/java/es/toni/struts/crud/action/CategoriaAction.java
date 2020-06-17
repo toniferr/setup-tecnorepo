@@ -1,5 +1,7 @@
 package es.toni.struts.crud.action;
 
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -20,6 +22,7 @@ public class CategoriaAction extends ActionSupport implements Preparable{
     private CategoriaService categoriaService = new CategoriaServiceImpl();
     private Categoria categoria;
     private Categoria[] categorias;
+    private List<Categoria> listaCategorias;
 
 	@Override
 	public void prepare() throws Exception {
@@ -35,7 +38,7 @@ public class CategoriaAction extends ActionSupport implements Preparable{
      * Get all categorias for display in the view.
      */
     public String list() {
-        categorias = categoriaService.getAllCategoria();
+    	listaCategorias = categoriaService.getAllCategoria();
         LOG.info("Listing categorias");
         return SUCCESS;
     }
@@ -86,6 +89,14 @@ public class CategoriaAction extends ActionSupport implements Preparable{
 
 	public void setCategorias(Categoria[] categorias) {
 		this.categorias = categorias;
+	}
+
+	public List<Categoria> getListaCategorias() {
+		return listaCategorias;
+	}
+
+	public void setListaCategorias(List<Categoria> listaCategorias) {
+		this.listaCategorias = listaCategorias;
 	}
        
 

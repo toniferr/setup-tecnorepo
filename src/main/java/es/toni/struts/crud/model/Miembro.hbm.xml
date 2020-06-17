@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="es.toni.struts.crud.model.Miembro" table="miembro">
+    <id name="id" type="int">
+      <generator class="increment"/>
+    </id>
+    <property name="nombre" type="string"/>
+    <property name="descripcion" type="string"/>
+    
+    <many-to-one name="categoria" class="es.toni.struts.crud.models.Categoria" fetch="select">
+        <column name="id" not-null="true" />
+    </many-to-one>
+    
+  </class>
+</hibernate-mapping>

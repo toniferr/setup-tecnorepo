@@ -5,7 +5,11 @@ import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.struts2.ServletActionContext;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 
+import es.toni.struts.crud.listener.HibernateListener;
 import es.toni.struts.crud.model.Categoria;
 
 public class CategoriaDaoImpl implements CategoriaDao {
@@ -34,8 +38,14 @@ public class CategoriaDaoImpl implements CategoriaDao {
     }
 
     @Override
-    public Categoria[] getAllCategoria() {
-        return categorias.toArray(new Categoria[categorias.size()]);
+    public List<Categoria> getAllCategoria() {
+		SessionFactory sessionFactory =
+	         (SessionFactory) ServletActionContext.getServletContext()
+                     .getAttribute(HibernateListener.KEY_NAME);
+
+		Session session = sessionFactory.openSession();
+
+		return session.createQuery("from Categoria").list();
     }
 
     @Override

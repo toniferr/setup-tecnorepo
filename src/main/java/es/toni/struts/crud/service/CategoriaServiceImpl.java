@@ -1,5 +1,7 @@
 package es.toni.struts.crud.service;
 
+import java.util.List;
+
 import es.toni.struts.crud.dao.CategoriaDao;
 import es.toni.struts.crud.dao.CategoriaDaoImpl;
 import es.toni.struts.crud.dao.CategoriaSupportDao;
@@ -22,7 +24,7 @@ public class CategoriaServiceImpl implements CategoriaService {
     }
 
     @Override
-    public Categoria[] getAllCategoria() {
+    public List<Categoria> getAllCategoria() {
         return categoriaDao.getAllCategoria();
     }
 
