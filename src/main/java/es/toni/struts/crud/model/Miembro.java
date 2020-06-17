@@ -1,7 +1,6 @@
 package es.toni.struts.crud.model;
 
-public class Miembro {
-	
+public class Miembro {	
 
 	private Integer id;
 	
@@ -9,6 +8,18 @@ public class Miembro {
     
     private String descripcion;
     
+	private Categoria categoria;    
+
+	public Miembro() {
+	}
+
+	public Miembro(Integer id, String nombre, String descripcion, Categoria categoria) {		
+		this.id = id;
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		this.categoria = categoria;
+	}
+	
 	public Integer getId() {
 		return id;
 	}
@@ -31,6 +42,20 @@ public class Miembro {
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
+	}
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+
+	@Override
+	public String toString() {
+		return "Miembro [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", categoria=" + categoria
+				+ "]";
 	}
 	
 }

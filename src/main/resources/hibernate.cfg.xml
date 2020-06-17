@@ -7,7 +7,7 @@
     <session-factory>
         <!-- Database connection settings -->
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mysql://localhost:3306/setup-tecnorepo</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/setup-tecnorepo?useSSL=false&amp;serverTimezone=UTC</property>
         <property name="connection.username">root</property>
         <property name="connection.password">root</property>
         
@@ -23,5 +23,6 @@
         
         <!-- Mapping files -->
         <mapping resource="es/toni/struts/crud/model/Categoria.hbm.xml"/>
+        <mapping resource="es/toni/struts/crud/model/Miembro.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>

@@ -1,16 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-  <class name="es.toni.struts.crud.model.Categoria" table="categoria">
+
+  <class name="es.toni.struts.crud.model.Categoria" table="categoria" catalog="setup-tecnorepo">
+  
     <id name="id" type="int">
       <generator class="increment"/>
     </id>
-    <property name="nombre" type="string"/>        
+    
+    <property name="nombre" type="string"/>  
+          
     <set name="miembros" table="miembro" inverse="true" lazy="true" fetch="select">
          <key>
-             <column name="id" not-null="true" />
+             <column name="id"/>
          </key>
          <one-to-many class="es.toni.struts.crud.model.Miembro" />
      </set>
+     
+     <set name="categorias" table="categoria" inverse="true" lazy="true" fetch="select">
+         <key>
+             <column name="id"/>
+         </key>
+         <one-to-many class="es.toni.struts.crud.model.Categoria" />
+     </set>
+     
+    <many-to-one name="categoria_padre" class="es.toni.struts.crud.models.Categoria" fetch="select">
+        <column name="categoria_padre" />
+    </many-to-one>
+    
   </class>
 </hibernate-mapping>
