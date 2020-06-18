@@ -14,6 +14,6 @@ public interface CategoriaService {
 
 	void insertCategoria(Categoria categoria);
 
-	void deleteCategoria(Integer id);
+	void deleteCategoria(Categoria categoria);
 
 }

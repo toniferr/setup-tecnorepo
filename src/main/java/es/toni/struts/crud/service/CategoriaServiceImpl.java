@@ -20,27 +20,27 @@ public class CategoriaServiceImpl implements CategoriaService {
 
     @Override
     public Categoria getCategoria(Integer id) {
-        return categoriaDao.getCategoria(id);
+        return categoriaDao.findById(id);
     }
 
     @Override
     public List<Categoria> getAllCategoria() {
-        return categoriaDao.getAllCategoria();
+        return categoriaDao.findAll();
     }
 
     @Override
     public void updateCategoria(Categoria categoria) {
-    	categoriaDao.updateCategoria(categoria);
+    	categoriaDao.save(categoria);
     }
 
     @Override
-    public void insertCategoria(Categoria categoriaBean) {
-        categoriaDao.insertCategoria(categoriaBean);
+    public void insertCategoria(Categoria categoria) {
+        categoriaDao.save(categoria);
     }
 
     @Override
-    public void deleteCategoria(Integer id) {
-        categoriaDao.deleteCategoria(id);
+    public void deleteCategoria(Categoria categoria) {
+        categoriaDao.delete(categoria);
     }
 
 }

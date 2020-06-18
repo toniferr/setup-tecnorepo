@@ -1,6 +1,13 @@
 package es.toni.struts.crud.model;
 
-public class Miembro {	
+import java.io.Serializable;
+
+public class Miembro  implements Serializable{	
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	private Integer id;
 	

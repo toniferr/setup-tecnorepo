@@ -21,8 +21,7 @@ public class CategoriaAction extends ActionSupport implements Preparable{
 	private static final Logger LOG = LogManager.getLogger(CategoriaAction.class.getName());
     private CategoriaService categoriaService = new CategoriaServiceImpl();
     private Categoria categoria;
-    private Categoria[] categorias;
-    private List<Categoria> listaCategorias;
+    private List<Categoria> categorias;
 
 	@Override
 	public void prepare() throws Exception {
@@ -38,7 +37,7 @@ public class CategoriaAction extends ActionSupport implements Preparable{
      * Get all categorias for display in the view.
      */
     public String list() {
-    	listaCategorias = categoriaService.getAllCategoria();
+    	categorias = categoriaService.getAllCategoria();
         LOG.info("Listing categorias");
         return SUCCESS;
     }
@@ -62,7 +61,7 @@ public class CategoriaAction extends ActionSupport implements Preparable{
      * instance field's id value.
      */
     public String delete() {
-        categoriaService.deleteCategoria(categoria.getId());
+        categoriaService.deleteCategoria(categoria);
         LOG.info("Deleted Categoria: " + categoria);
         return SUCCESS;
     }
@@ -83,21 +82,12 @@ public class CategoriaAction extends ActionSupport implements Preparable{
 		this.categoria = categoria;
 	}
 
-	public Categoria[] getCategorias() {
+	public List<Categoria> getCategorias() {
 		return categorias;
 	}
 
-	public void setCategorias(Categoria[] categorias) {
+	public void setCategorias(List<Categoria> categorias) {
 		this.categorias = categorias;
 	}
-
-	public List<Categoria> getListaCategorias() {
-		return listaCategorias;
-	}
-
-	public void setListaCategorias(List<Categoria> listaCategorias) {
-		this.listaCategorias = listaCategorias;
-	}
-       
 
 }

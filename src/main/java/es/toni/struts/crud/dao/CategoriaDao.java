@@ -6,13 +6,11 @@ import es.toni.struts.crud.model.Categoria;
 
 public interface CategoriaDao {
     
-    Categoria getCategoria(Integer id);
-    
-    List<Categoria> getAllCategoria();
+	Categoria findById(Integer id);
+	
+    List<Categoria> findAll();
 
-    void updateCategoria(Categoria categoriaBean);
+	void save(Categoria categoria);
     
-    void insertCategoria(Categoria categoriaBean);
-    
-    void deleteCategoria(Integer id);
+    void delete(Categoria categoria);
 }

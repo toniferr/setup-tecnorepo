@@ -1,21 +1,27 @@
 package es.toni.struts.crud.model;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Categoria implements Cloneable{
+public class Categoria implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	private Integer id;
 	
     private String nombre;
+	
+	private Categoria categoria_padre;
     
 	private Set<Categoria> categorias =
 			new HashSet<Categoria>(0);
 	
 	private Set<Miembro> miembros =
 				new HashSet<Miembro>(0);
-	
-	private Categoria categoria_padre;
     
 	public Categoria() {
 	}
