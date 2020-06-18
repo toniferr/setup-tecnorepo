@@ -4,18 +4,14 @@ import java.util.List;
 
 import es.toni.struts.crud.dao.CategoriaDao;
 import es.toni.struts.crud.dao.CategoriaDaoImpl;
-import es.toni.struts.crud.dao.CategoriaSupportDao;
-import es.toni.struts.crud.dao.CategoriaSupportDaoImpl;
 import es.toni.struts.crud.model.Categoria;
 
 public class CategoriaServiceImpl implements CategoriaService {
 	
     CategoriaDao categoriaDao; 
-    CategoriaSupportDao categoriaSupportDao; 
     
     public CategoriaServiceImpl() {
         categoriaDao = new CategoriaDaoImpl();
-        categoriaSupportDao = new CategoriaSupportDaoImpl();
     }
 
     @Override

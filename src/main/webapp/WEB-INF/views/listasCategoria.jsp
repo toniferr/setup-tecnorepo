@@ -10,7 +10,7 @@
     <body>
         <div class="titleDiv"><s:text name="application.title.categorias"/></div>
         <h1><s:text name="label.categorias"/></h1>
-        <s:url var="url" action="inputCategoria" />
+        <s:url var="url" action="saveCategoria" />
         <a href="<s:property value="#url"/>">Add New Categoria</a>
         <br/><br/>
         <table class="borderAll">

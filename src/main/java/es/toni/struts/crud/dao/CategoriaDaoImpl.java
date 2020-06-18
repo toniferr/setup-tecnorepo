@@ -17,7 +17,7 @@ import es.toni.struts.crud.util.HibernateUtil;
 public class CategoriaDaoImpl implements CategoriaDao {
 	
     private static final Logger LOG = LogManager.getLogger(CategoriaDaoImpl.class.getName());
-    private static List<Categoria> categorias;
+    private List<Categoria> categorias;
     
     public Categoria findById(Integer id) {
 

@@ -10,3 +10,6 @@ Dependencias:
 - log4j-api - version 2.13.3
 - log4j-core - version 2.13.3
 - freemarker - version 2.3.30
+
+- hibernate-core - version 4.3.11.Final
+- mysql-connector-java - version 8.0.20
