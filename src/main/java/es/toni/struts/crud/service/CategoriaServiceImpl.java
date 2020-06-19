@@ -3,7 +3,6 @@ package es.toni.struts.crud.service;
 import java.util.List;
 
 import es.toni.struts.crud.dao.CategoriaDao;
-import es.toni.struts.crud.dao.CategoriaDaoImpl;
 import es.toni.struts.crud.model.Categoria;
 
 public class CategoriaServiceImpl implements CategoriaService {
@@ -11,11 +10,14 @@ public class CategoriaServiceImpl implements CategoriaService {
     CategoriaDao categoriaDao; 
     
     public CategoriaServiceImpl() {
-        categoriaDao = new CategoriaDaoImpl();
-    }
+	}
 
-    @Override
-    public Categoria getCategoria(Integer id) {
+    public CategoriaServiceImpl(CategoriaDao categoriaDao) {
+		this.categoriaDao = categoriaDao;
+	}
+
+	@Override
+    public Categoria getCategoria(Long id) {
         return categoriaDao.findById(id);
     }
 

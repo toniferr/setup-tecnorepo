@@ -9,7 +9,7 @@ public class Miembro  implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private Integer id;
+	private Long id;
 	
     private String nombre;
     
@@ -20,18 +20,18 @@ public class Miembro  implements Serializable{
 	public Miembro() {
 	}
 
-	public Miembro(Integer id, String nombre, String descripcion, Categoria categoria) {		
+	public Miembro(Long id, String nombre, String descripcion, Categoria categoria) {		
 		this.id = id;
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 		this.categoria = categoria;
 	}
 	
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

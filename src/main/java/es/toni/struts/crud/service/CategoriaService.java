@@ -6,7 +6,7 @@ import es.toni.struts.crud.model.Categoria;
 
 public interface CategoriaService {
 
-	Categoria getCategoria(Integer id);
+	Categoria getCategoria(Long id);
 
 	List<Categoria> getAllCategoria();
 

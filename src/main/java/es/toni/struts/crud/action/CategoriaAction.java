@@ -19,6 +19,10 @@ public class CategoriaAction extends ActionSupport implements Preparable {
 	private CategoriaService categoriaService = new CategoriaServiceImpl();
 	private Categoria categoria;
 	private List<Categoria> categorias;
+	
+	public CategoriaAction(CategoriaService categoriaService) {
+		this.categoriaService = categoriaService;
+	}
 
 	@Override
 	public void prepare() throws Exception {

@@ -19,7 +19,7 @@ public class CategoriaDaoImpl implements CategoriaDao {
     private List<Categoria> categorias;
     private Categoria categoria;
     
-    public Categoria findById(Integer id) {
+    public Categoria findById(Long id) {
 
         SessionFactory sessions = HibernateUtil.getSessionFactory();
         Session session = sessions.openSession();

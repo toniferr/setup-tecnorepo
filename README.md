@@ -13,3 +13,6 @@ Dependencias:
 
 - hibernate-core - version 4.3.11.Final
 - mysql-connector-java - version 8.0.20
+
+- junit-jupiter-api - versión 5.6.2
+- mockito-core - version 3.3.3

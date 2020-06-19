@@ -6,7 +6,7 @@ import es.toni.struts.crud.model.Categoria;
 
 public interface CategoriaDao {
     
-	Categoria findById(Integer id);
+	Categoria findById(Long id);
 	
     List<Categoria> findAll();
 
