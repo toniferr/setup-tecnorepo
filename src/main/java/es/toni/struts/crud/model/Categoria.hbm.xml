@@ -10,17 +10,17 @@
     </id>
     
     <property name="nombre" type="string"/>  
-          
-    <set name="miembros" table="miembro" inverse="true" lazy="true" fetch="select">
+              
+    <set name="miembros" table="miembro" inverse="true" cascade="all">
          <key>
-             <column name="id"/>
+             <column name="categoria_id"/>
          </key>
          <one-to-many class="es.toni.struts.crud.model.Miembro" />
      </set>
      
-     <set name="categorias" table="categoria" inverse="true" lazy="true" fetch="select">
+     <set name="categorias" table="categoria" inverse="true" cascade="all">
          <key>
-             <column name="id"/>
+             <column name="categoria_padre"/>
          </key>
          <one-to-many class="es.toni.struts.crud.model.Categoria" />
      </set>

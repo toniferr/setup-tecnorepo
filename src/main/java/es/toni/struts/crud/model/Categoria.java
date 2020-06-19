@@ -81,13 +81,7 @@ public class Categoria implements Serializable {
 	}
 
 	@Override
-	public Object clone() throws CloneNotSupportedException {
-		return super.clone();
-	}
-
-	@Override
 	public String toString() {
-		return "Categoria [id=" + id + ", nombre=" + nombre + ", categorias=" + categorias + ", miembros=" + miembros
-				+ ", categoria_padre=" + categoria_padre + "]";
+		return "Categoria [id=" + id + ", nombre=" + nombre +"]";
 	}
 }

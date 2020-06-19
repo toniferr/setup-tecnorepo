@@ -1,6 +1,5 @@
 package es.toni.struts.crud.dao;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
@@ -18,27 +17,24 @@ public class CategoriaDaoImpl implements CategoriaDao {
 	
     private static final Logger LOG = LogManager.getLogger(CategoriaDaoImpl.class.getName());
     private List<Categoria> categorias;
+    private Categoria categoria;
     
     public Categoria findById(Integer id) {
 
         SessionFactory sessions = HibernateUtil.getSessionFactory();
         Session session = sessions.openSession();
-
-        Categoria categoria = null;
         Transaction tx = null;
-
         try {
             tx = session.beginTransaction();
-
-            categoria = (Categoria) session.load(Categoria.class, id);
+            categoria = (Categoria) session.get(Categoria.class, id);
             tx.commit();
         } catch (HibernateException e) {
             if (tx != null) {
                 tx.rollback();
             }
-            e.printStackTrace();
+            LOG.error("Error en método findById : ", e);
         } finally {
-            //session.close();
+            session.close();
         }
         return categoria;
     }
@@ -48,7 +44,6 @@ public class CategoriaDaoImpl implements CategoriaDao {
     	
         SessionFactory sessions = HibernateUtil.getSessionFactory();
         Session session = sessions.openSession();
-        List<Categoria> categoria = null;
         Transaction tx = null;
         try {
             tx = session.beginTransaction();
@@ -59,7 +54,7 @@ public class CategoriaDaoImpl implements CategoriaDao {
             if (tx != null) {
                 tx.rollback();
             }
-            LOG.error("Error : ",e);
+            LOG.error("Error en el método findAll : ",e);
         } finally {
             session.close();
         }
@@ -80,7 +75,7 @@ public class CategoriaDaoImpl implements CategoriaDao {
             if (tx != null) {
                 tx.rollback();
             }
-            e.printStackTrace();
+            LOG.error("Error en el método save : ",e);
         } finally {
             session.close();
         }
@@ -100,7 +95,7 @@ public class CategoriaDaoImpl implements CategoriaDao {
             if (tx != null) {
                 tx.rollback();
             }
-            e.printStackTrace();
+            LOG.error("Error en el método delete : ",e);
         } finally {
             session.close();
         }

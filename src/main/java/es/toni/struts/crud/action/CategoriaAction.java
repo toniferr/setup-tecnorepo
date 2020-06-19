@@ -36,7 +36,7 @@ public class CategoriaAction extends ActionSupport implements Preparable {
 		return SUCCESS;
 	}
 
-	public String saveCategoria() {
+	public String save() {
 		if (categoria.getId() == null) {
 			categoriaService.insertCategoria(categoria);
 			LOG.info("Created new Categoria: " + categoria);
@@ -47,7 +47,7 @@ public class CategoriaAction extends ActionSupport implements Preparable {
 		return SUCCESS;
 	}
 
-	public String deleteCategoria() {
+	public String delete() {
 		categoriaService.deleteCategoria(categoria);
 		LOG.info("Deleted Categoria: " + categoria);
 		return SUCCESS;

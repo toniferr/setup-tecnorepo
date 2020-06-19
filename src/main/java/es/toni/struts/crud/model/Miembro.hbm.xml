@@ -11,7 +11,7 @@
     <property name="nombre" type="string" />
     
     <property name="descripcion" type="string"/>
-    
+        
     <many-to-one name="categoria" class="es.toni.struts.crud.model.Categoria" fetch="select">
         <column name="categoria_id" not-null="true" />
     </many-to-one>
