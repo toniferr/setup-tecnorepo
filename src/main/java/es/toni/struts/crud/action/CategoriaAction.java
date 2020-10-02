@@ -10,20 +10,24 @@ import com.opensymphony.xwork2.Preparable;
 
 import es.toni.struts.crud.model.Categoria;
 import es.toni.struts.crud.service.CategoriaService;
-import es.toni.struts.crud.service.CategoriaServiceImpl;
+import es.toni.struts.crud.service.impl.CategoriaServiceImpl;
 
 public class CategoriaAction extends ActionSupport implements Preparable {
 
 	private static final long serialVersionUID = 1L;
 	private static final Logger LOG = LogManager.getLogger(CategoriaAction.class.getName());
+	
 	private CategoriaService categoriaService = new CategoriaServiceImpl();
+	
 	private Categoria categoria;
 	private List<Categoria> categorias;
+	
+	public CategoriaAction() {}
 	
 	public CategoriaAction(CategoriaService categoriaService) {
 		this.categoriaService = categoriaService;
 	}
-
+	
 	@Override
 	public void prepare() throws Exception {
 		LOG.info("Prepared support data for Categoria entity.");

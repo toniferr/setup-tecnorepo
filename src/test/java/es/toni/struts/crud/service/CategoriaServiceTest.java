@@ -2,7 +2,7 @@ package es.toni.struts.crud.service;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
-import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
@@ -15,6 +15,7 @@ import org.mockito.MockitoAnnotations;
 
 import es.toni.struts.crud.dao.CategoriaDao;
 import es.toni.struts.crud.model.Categoria;
+import es.toni.struts.crud.service.impl.CategoriaServiceImpl;
 
 public class CategoriaServiceTest {
     
@@ -29,9 +30,9 @@ public class CategoriaServiceTest {
     Categoria categoria2 = new Categoria();
     Categoria categoria3 = new Categoria();
 
-	Long categoria1Id = 1L;
-	Long categoria2Id = 2L;
-	Long categoria3Id = 3L;
+    Integer categoria1Id = 1;
+    Integer categoria2Id = 2;
+    Integer categoria3Id = 3;
     
     @Before
     public void setUp() {
@@ -63,7 +64,7 @@ public class CategoriaServiceTest {
 
     @Test
     public void findById() {
-        when(categoriaDao.findById(anyLong())).thenReturn(categoria1);
+        when(categoriaDao.findById(anyInt())).thenReturn(categoria1);
         Categoria categoria= categoriaService.getCategoria(categoria1Id);
         assertEquals("spring", categoria.getNombre());
     }

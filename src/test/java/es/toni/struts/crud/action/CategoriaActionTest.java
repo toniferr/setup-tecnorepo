@@ -34,15 +34,15 @@ public class CategoriaActionTest {
 		MockitoAnnotations.initMocks(this);
 		categoriaAction = new CategoriaAction(categoriaService);
 
-		Long categoria1Id = 1L;
+		Integer categoria1Id = 1;
 		categoria1.setId(categoria1Id);
 		categoria1.setNombre("spring");
 
-		Long categoria2Id = 2L;
+		Integer categoria2Id = 2;
 		categoria2.setId(categoria2Id);
 		categoria2.setNombre("struts2");
 		
-		Long categoria3Id = 3L;
+		Integer categoria3Id = 3;
 		categoria3.setId(categoria3Id);
 		categoria3.setNombre("struts2");
 

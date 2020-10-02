@@ -1,13 +1,15 @@
-package es.toni.struts.crud.service;
+package es.toni.struts.crud.service.impl;
 
 import java.util.List;
 
 import es.toni.struts.crud.dao.CategoriaDao;
+import es.toni.struts.crud.dao.impl.CategoriaDaoImpl;
 import es.toni.struts.crud.model.Categoria;
+import es.toni.struts.crud.service.CategoriaService;
 
 public class CategoriaServiceImpl implements CategoriaService {
 	
-    CategoriaDao categoriaDao; 
+    CategoriaDao categoriaDao = new CategoriaDaoImpl();
     
     public CategoriaServiceImpl() {
 	}
@@ -17,7 +19,7 @@ public class CategoriaServiceImpl implements CategoriaService {
 	}
 
 	@Override
-    public Categoria getCategoria(Long id) {
+    public Categoria getCategoria(Integer id) {
         return categoriaDao.findById(id);
     }
 

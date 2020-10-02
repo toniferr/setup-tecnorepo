@@ -27,7 +27,7 @@
             <result name="success">/WEB-INF/views/listasCategoria.jsp</result>
             <interceptor-ref name="basicStack"/>
         </action>
-       <action name="*Categoria" class="es.toni.struts.crud.action.CategoriaAction" method="{1}">
+        <action name="*Categoria" class="es.toni.struts.crud.action.CategoriaAction" method="{1}">
             <result name="input">/WEB-INF/views/categoria.jsp</result>
             <result name="success" type="redirectAction">index</result>
         </action>

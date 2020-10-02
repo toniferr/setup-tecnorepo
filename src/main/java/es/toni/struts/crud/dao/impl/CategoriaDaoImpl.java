@@ -1,4 +1,4 @@
-package es.toni.struts.crud.dao;
+package es.toni.struts.crud.dao.impl;
 
 import java.util.List;
 
@@ -10,6 +10,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
+import es.toni.struts.crud.dao.CategoriaDao;
 import es.toni.struts.crud.model.Categoria;
 import es.toni.struts.crud.util.HibernateUtil;
 
@@ -18,8 +19,8 @@ public class CategoriaDaoImpl implements CategoriaDao {
     private static final Logger LOG = LogManager.getLogger(CategoriaDaoImpl.class.getName());
     private List<Categoria> categorias;
     private Categoria categoria;
-    
-    public Categoria findById(Long id) {
+
+	public Categoria findById(Integer id) {
 
         SessionFactory sessions = HibernateUtil.getSessionFactory();
         Session session = sessions.openSession();
@@ -100,4 +101,22 @@ public class CategoriaDaoImpl implements CategoriaDao {
             session.close();
         }
     }
+    
+
+    
+    public List<Categoria> getCategorias() {
+		return categorias;
+	}
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategorias(List<Categoria> categorias) {
+		this.categorias = categorias;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
 }

@@ -11,7 +11,7 @@ public class Categoria implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private Long id;
+	private Integer id;
 	
     private String nombre;
 	
@@ -26,9 +26,8 @@ public class Categoria implements Serializable {
 	public Categoria() {
 	}
 
-	public Categoria(Long id, String nombre, Set<Categoria> categorias, Set<Miembro> miembros,
+	public Categoria(Integer id, String nombre, Set<Categoria> categorias, Set<Miembro> miembros,
 			Categoria categoria_padre) {
-		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.categorias = categorias;
@@ -36,11 +35,11 @@ public class Categoria implements Serializable {
 		this.categoria_padre = categoria_padre;
 	}
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
